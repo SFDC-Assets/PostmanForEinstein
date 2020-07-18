@@ -1,0 +1,1730 @@
+{
+	"info": {
+		"_postman_id": "29593656-fc31-eacb-ad1e-2723d3d9e6f8",
+		"name": "Einstein Vision and Language",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Vision",
+			"item": [
+				{
+					"name": "Datasets",
+					"item": [
+						{
+							"name": "Create a Dataset Asynchronously",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data",
+										"type": "text"
+									},
+									{
+										"key": "Cache-Control",
+										"value": "no-cache",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "type",
+											"value": "image",
+											"type": "text"
+										},
+										{
+											"key": "path",
+											"value": "http://einstein.ai/images/mountainvsbeach.zip",
+											"type": "text"
+										},
+										{
+											"key": "data",
+											"type": "file",
+											"src": [],
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/vision/datasets/upload",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"vision",
+										"datasets",
+										"upload"
+									]
+								},
+								"description": "API Documentation: [Create a Dataset From a Zip File Asynchronously](https://metamind.readme.io/reference#create-a-dataset-zip-async)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get a Dataset",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/vision/datasets/<DATASET_ID>",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"vision",
+										"datasets",
+										"<DATASET_ID>"
+									]
+								},
+								"description": "API Documentation: [Get a Dataset](https://metamind.readme.io/reference#get-a-dataset)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Datasets",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Cache-Control",
+										"value": "no-cache",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/vision/datasets",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"vision",
+										"datasets"
+									]
+								},
+								"description": "API Documentation: [Get All Datasets](https://metamind.readme.io/reference#get-all-datasets)"
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE Dataset",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Cache-Control",
+										"value": "no-cache",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/vision/datasets/<DATASET_ID>",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"vision",
+										"datasets",
+										"<DATASET_ID>"
+									]
+								},
+								"description": "API Documentation: [Delete a Dataset](https://metamind.readme.io/reference#delete-a-dataset)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Deletion Status",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Cache-Control",
+										"value": "no-cache",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/vision/deletion/<DELETION_ID>",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"vision",
+										"deletion",
+										"<DELETION_ID>"
+									]
+								},
+								"description": "API Documentation: [Get Deletion Status](https://metamind.readme.io/reference#get-vision-deletion-status)"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Examples",
+					"item": [
+						{
+							"name": "Get All Examples",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/vision/datasets/<DATASET_ID>/examples",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"vision",
+										"datasets",
+										"<DATASET_ID>",
+										"examples"
+									]
+								},
+								"description": "API Documentation: [Get All Examples](https://metamind.readme.io/reference#get-all-examples)"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Training",
+					"item": [
+						{
+							"name": "Train a Dataset",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "multipart/form-data"
+									},
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Custom Classification Model",
+											"type": "text"
+										},
+										{
+											"key": "datasetId",
+											"value": "<DATASET_ID>",
+											"type": "text"
+										},
+										{
+											"key": "trainParams",
+											"value": "{\"augmentData\":true}",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/vision/train",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"vision",
+										"train"
+									]
+								},
+								"description": "API Documentation: [Train a Dataset](https://metamind.readme.io/reference#train-a-dataset)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Training Status",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/vision/train/<MODEL_ID>",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"vision",
+										"train",
+										"<MODEL_ID>"
+									]
+								},
+								"description": "API Documentation: [Get Training Status](https://metamind.readme.io/reference#get-training-status)"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Models",
+					"item": [
+						{
+							"name": "Get Model Metrics",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/vision/models/<MODEL_ID>",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"vision",
+										"models",
+										"<MODEL_ID>"
+									]
+								},
+								"description": "API Documentation: [Get Model Metrics](https://metamind.readme.io/reference#get-model-metrics)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Model Learning Curve",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/vision/models/<MODEL_ID>/lc",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"vision",
+										"models",
+										"<MODEL_ID>",
+										"lc"
+									]
+								},
+								"description": "API Documentation: [Get Model Learning Curve](https://metamind.readme.io/reference#get-model-learning-curve)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Models",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/vision/datasets/<DATASET_ID>/models",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"vision",
+										"datasets",
+										"<DATASET_ID>",
+										"models"
+									]
+								},
+								"description": "API Documentation: [Get All Models](https://metamind.readme.io/reference#get-all-models)"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Predictions",
+					"item": [
+						{
+							"name": "Predict Image Classification",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "multipart/form-data"
+									},
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "sampleContent",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "modelId",
+											"value": "<MODEL_ID>",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/vision/predict",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"vision",
+										"predict"
+									]
+								},
+								"description": "API Documentation: [Prediction with Image URL](https://metamind.readme.io/reference#prediction-with-image-url)"
+							},
+							"response": []
+						},
+						{
+							"name": "Predict Object Detection",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "modelId",
+											"value": "<MODEL_ID>",
+											"type": "text"
+										},
+										{
+											"key": "sampleLocation",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "sampleContent",
+											"type": "file",
+											"src": "/Users/dschultz/GoogleDrive/Emerging Tech/projects/vision samples/object detection/alpine.jpg"
+										}
+									],
+									"options": {
+										"formdata": {}
+									}
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/vision/detect",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"vision",
+										"detect"
+									]
+								},
+								"description": "API Documentation: [Detect with Image URL](https://metamind.readme.io/reference#detection-with-image-url)"
+							},
+							"response": []
+						},
+						{
+							"name": "Predict OCR",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data",
+										"type": "text"
+									},
+									{
+										"key": "Cache-Control",
+										"value": "no-cache",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "sampleContent",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "sampleLocation",
+											"value": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/ReceiptSwiss.jpg/170px-ReceiptSwiss.jpg",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "modelId",
+											"value": "OCRModel",
+											"type": "text"
+										},
+										{
+											"key": "task",
+											"value": "text",
+											"type": "text"
+										}
+									],
+									"options": {
+										"formdata": {}
+									}
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/vision/ocr",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"vision",
+										"ocr"
+									]
+								},
+								"description": "API Documentation: [Detect Text](https://metamind.readme.io/reference#detect-text-in-image)"
+							},
+							"response": []
+						},
+						{
+							"name": "Predict OCR Table",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "multipart/form-data",
+										"type": "text"
+									},
+									{
+										"key": "Cache-Control",
+										"value": "no-cache",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "sampleContent",
+											"type": "file",
+											"src": [],
+											"disabled": true
+										},
+										{
+											"key": "sampleLocation",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "modelId",
+											"value": "tabulatev2",
+											"type": "text"
+										},
+										{
+											"key": "task",
+											"value": "table",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/vision/ocr",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"vision",
+										"ocr"
+									]
+								},
+								"description": "API Documentation: [Detect Text](https://metamind.readme.io/reference#detect-text-in-image)"
+							},
+							"response": []
+						},
+						{
+							"name": "Predict OCR Form",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "multipart/form-data"
+									},
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "sampleLocation",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "sampleContent",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "modelId",
+											"value": "OCRModel",
+											"type": "text"
+										},
+										{
+											"key": "task",
+											"value": "form",
+											"type": "text"
+										},
+										{
+											"key": "formType",
+											"value": "dl",
+											"type": "text"
+										},
+										{
+											"key": "formTemplate",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/vision/ocr",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"vision",
+										"ocr"
+									]
+								},
+								"description": "API Documentation: [Detect Text](https://metamind.readme.io/reference#detect-text-in-image)"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Language",
+			"item": [
+				{
+					"name": "Datasets",
+					"item": [
+						{
+							"name": "Create a Dataset Asynchronously",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "multipart/form-data"
+									},
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "data",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "path",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "text-intent",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/language/datasets/upload",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"language",
+										"datasets",
+										"upload"
+									]
+								},
+								"description": "API Documentation: [Create a Dataset Asynchronously](https://metamind.readme.io/reference#create-a-lang-dataset-from-file)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get a Dataset",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/language/datasets/<DATASET_ID>",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"language",
+										"datasets",
+										"<DATASET_ID>"
+									]
+								},
+								"description": "API Documentation[Get a Dataset](https://metamind.readme.io/reference#get-a-lang-dataset)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Datasets",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/language/datasets",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"language",
+										"datasets"
+									]
+								},
+								"description": "API Documentation: [Get All Datasets](https://metamind.readme.io/reference#get-all-lang-datasets)"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a Dataset",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/language/datasets/<DATASET_ID>",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"language",
+										"datasets",
+										"<DATASET_ID>"
+									]
+								},
+								"description": "API Documentation: [Delete a Dataset](https://metamind.readme.io/reference#delete-a-lang-dataset)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Deletion Status",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/language/deletion/<DELETION_ID>",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"language",
+										"deletion",
+										"<DELETION_ID>"
+									]
+								},
+								"description": "API Documentation: [Get Deletion Status](https://metamind.readme.io/reference#get-lang-deletion-status)"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Examples",
+					"item": [
+						{
+							"name": "Create Examples",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "multipart/form-data"
+									},
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "path",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "data",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/language/datasets/<DATASET_ID>/upload",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"language",
+										"datasets",
+										"<DATASET_ID>",
+										"upload"
+									]
+								},
+								"description": "API Documentation: [Create Examples](https://metamind.readme.io/reference#create-lang-examples-from-file)"
+							},
+							"response": []
+						},
+						{
+							"name": "Create a Feedback Example",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "multipart/form-data"
+									},
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "modelId",
+											"value": "<MODEL_ID>",
+											"type": "text"
+										},
+										{
+											"key": "document",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "expectedLabel",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/language/feedback",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"language",
+										"feedback"
+									]
+								},
+								"description": "API Documentation: [Create a Feedback Example](https://metamind.readme.io/reference#create-a-lang-feedback-example)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Examples",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/language/datasets/<DATASET_ID>/examples",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"language",
+										"datasets",
+										"<DATASET_ID>",
+										"examples"
+									]
+								},
+								"description": "API Documentation: [Get All Examples](https://metamind.readme.io/reference#get-all-lang-examples)"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Training",
+					"item": [
+						{
+							"name": "Train a Dataset",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "multipart/form-data"
+									},
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Multilingual Model",
+											"type": "text"
+										},
+										{
+											"key": "datasetId",
+											"value": "<DATASET_ID>",
+											"type": "text"
+										},
+										{
+											"key": "algorithm",
+											"value": "multilingual-intent",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/language/train",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"language",
+										"train"
+									]
+								},
+								"description": "API Documentation: [Train a Dataset](https://metamind.readme.io/reference#train-a-lang-dataset)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Training Status",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/language/train/<MODEL_ID>",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"language",
+										"train",
+										"<MODEL_ID>"
+									]
+								},
+								"description": "API Documentation: [Get Training Status](https://metamind.readme.io/reference#get-lang-training-status)"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Models",
+					"item": [
+						{
+							"name": "Get Model Metrics",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/language/models/<MODEL_ID>",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"language",
+										"models",
+										"<MODEL_ID>"
+									]
+								},
+								"description": "API Documentation: [Get Model Metrics](https://metamind.readme.io/reference#get-lang-model-metrics)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Model Learning Curve",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/language/models/<MODEL_ID>/lc",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"language",
+										"models",
+										"<MODEL_ID>",
+										"lc"
+									]
+								},
+								"description": "API Documentation: [Get Model Learning Curve](https://metamind.readme.io/reference#get-lang-model-learning-curve)"
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Models",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/language/datasets/<DATASET_ID>/models",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"language",
+										"datasets",
+										"<DATASET_ID>",
+										"models"
+									]
+								},
+								"description": "API Documentation: [Get All Models](https://metamind.readme.io/reference#get-all-lang-models)"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Predictions",
+					"item": [
+						{
+							"name": "Prediction for Intent",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "modelId",
+											"value": "<MODEL_ID>",
+											"type": "text"
+										},
+										{
+											"key": "document",
+											"value": "",
+											"type": "text"
+										},
+										{
+											"key": "numResults",
+											"value": "12",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/language/intent",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"language",
+										"intent"
+									]
+								},
+								"description": "API Documentation: [Prediction for Intent](https://metamind.readme.io/reference#prediction-intent)"
+							},
+							"response": []
+						},
+						{
+							"name": "Prediction for Sentiment",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "modelId",
+											"value": "CommunitySentiment",
+											"type": "text"
+										},
+										{
+											"key": "document",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/language/sentiment",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"language",
+										"sentiment"
+									]
+								},
+								"description": "API Documentation: [Prediction for Sentiment](https://metamind.readme.io/reference#prediction-sentiment)"
+							},
+							"response": []
+						},
+						{
+							"name": "Prediction for NER",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "multipart/form-data"
+									},
+									{
+										"key": "Cache-Control",
+										"type": "text",
+										"value": "no-cache"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "modelId",
+											"value": "NER7",
+											"type": "text"
+										},
+										{
+											"key": "document",
+											"value": "",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://api.einstein.ai/v2/language/ner",
+									"protocol": "https",
+									"host": [
+										"api",
+										"einstein",
+										"ai"
+									],
+									"path": [
+										"v2",
+										"language",
+										"ner"
+									]
+								},
+								"description": "API Documenation: Not yet available"
+							},
+							"response": []
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "00 - KJUR",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "8b8de664-1cf7-4165-91c3-2dd37071870f",
+						"exec": [
+							"pm.globals.set(\"jsrsasign-js\", responseBody);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://kjur.github.io/jsrsasign/jsrsasign-latest-all-min.js",
+					"protocol": "http",
+					"host": [
+						"kjur",
+						"github",
+						"io"
+					],
+					"path": [
+						"jsrsasign",
+						"jsrsasign-latest-all-min.js"
+					]
+				},
+				"description": "Retrieves a Opensource free pure JavaScript cryptographic library used to sign the JWT token when requesting an access token for Einstein.ai.  Library is stored in the jsrsasign global environment variable and should never need to be retrieved again."
+			},
+			"response": []
+		},
+		{
+			"name": "01 - Retrieve Access Token",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "58b3f56a-ddf7-4c88-b6fa-c1de1ea21e3a",
+						"exec": [
+							"// Retrieve the KJUR library",
+							"var navigator = {};",
+							"var window = {};",
+							"eval(pm.globals.get(\"jsrsasign-js\"));",
+							"",
+							"// Retrieve the creds from (Environment) variables",
+							"let privateKey = pm.variables.get(\"privateKey\");",
+							"let username = pm.variables.get(\"username\");",
+							"",
+							"// Retrieve expiration duration (in minutes) from Environment variable",
+							"var expInMinutes = pm.variables.get(\"expInMinutes\");",
+							"// Default to 15 minutes",
+							"expInMinutes = (expInMinutes ? expInMinutes : 15);",
+							"// Compute the expiration time",
+							"var timeInSeconds = Math.round(+new Date() / 1000);",
+							"var exp = timeInSeconds + (parseInt(expInMinutes) * 60);",
+							"",
+							"// Create the JWT header",
+							"var header = {",
+							"  \"alg\": \"RS256\",",
+							"  \"typ\": \"JWT\"",
+							"};",
+							"var headerStr = JSON.stringify(header);",
+							"",
+							"var payload = {",
+							"  \"iss\": \"developer.force.com\",",
+							"  \"sub\": username,",
+							"  \"aud\": \"https://api.einstein.ai/v1/oauth2/token\",",
+							"  \"exp\": exp",
+							"};",
+							"",
+							"// sign the JWT token",
+							"var sJWT = KJUR.jws.JWS.sign(null, headerStr, payload, privateKey);",
+							"",
+							"// Save the assertion as a local variable.  This assertion",
+							"// will be inserted into the request payload to retrieve an access_token",
+							"pm.variables.set(\"assertion\", sJWT);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "62b601f1-ed8d-431f-8419-1a634d7115c4",
+						"exec": [
+							"// Retrieve the access token from the response and save as an environment variable",
+							"var jsonData = pm.response.json();",
+							"pm.environment.set(\"access_token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+							"type": "text"
+						},
+						{
+							"key": "assertion",
+							"value": "{{assertion}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.einstein.ai/v1/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"api",
+						"einstein",
+						"ai"
+					],
+					"path": [
+						"v1",
+						"oauth2",
+						"token"
+					]
+				},
+				"description": "Retrieves an access token for use with Einstein.ai.\n\n1.  The Pre-request Script: \n   1. Retrieves the **privateKey** and **username** (environment) variables\n   2. Creates the JWT token header and payload\n   3. Uses the KJUR library to sign the token with the privateKey\n   4. Saves the result in the variable **assertion**\n\n2.  The POST is then sent, using the **assertion** variable\n3.  The Tests Script\n   1. Saves the **access_token** from the response in the Environment variable **access_token**\n\nThe **Einstein Platform Services** collection in which this request lives adds the Bearer Token authorization header to any requests that inherit it."
+			},
+			"response": []
+		},
+		{
+			"name": "Get API Usage",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cache-Control",
+						"type": "text",
+						"value": "no-cache"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.einstein.ai/v2/apiusage",
+					"protocol": "https",
+					"host": [
+						"api",
+						"einstein",
+						"ai"
+					],
+					"path": [
+						"v2",
+						"apiusage"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "67bb45d7-dc62-4ec5-b01b-d82a1bd149de",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "319752aa-bcb9-4238-b9b5-b267ddc8458a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
