@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "29593656-fc31-eacb-ad1e-2723d3d9e6f8",
+		"_postman_id": "8a14433b-3925-4b37-bd8b-ce2c4c01c509",
 		"name": "Einstein Vision and Language",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -781,7 +781,8 @@
 					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "Language",
@@ -1511,7 +1512,8 @@
 					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "00 - KJUR",
@@ -1519,7 +1521,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "8b8de664-1cf7-4165-91c3-2dd37071870f",
+						"id": "bc3f4b00-41d4-46d1-a552-337cd49c0881",
 						"exec": [
 							"pm.globals.set(\"jsrsasign-js\", responseBody);"
 						],
@@ -1553,7 +1555,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "58b3f56a-ddf7-4c88-b6fa-c1de1ea21e3a",
+						"id": "e5e2b984-2147-4a9c-a52f-d12f20cc3628",
 						"exec": [
 							"// Retrieve the KJUR library",
 							"var navigator = {};",
@@ -1563,6 +1565,15 @@
 							"// Retrieve the creds from (Environment) variables",
 							"let privateKey = pm.variables.get(\"privateKey\");",
 							"let username = pm.variables.get(\"username\");",
+							"",
+							"if (!privateKey) {",
+							"  throw new Error('No privateKey Environment variable defined or No Environment selected');",
+							"}",
+							"",
+							"if (!username) {",
+							"  throw new Error('No username Environment variable defined or No Environment selected');",
+							"}",
+							"",
 							"",
 							"// Retrieve expiration duration (in minutes) from Environment variable",
 							"var expInMinutes = pm.variables.get(\"expInMinutes\");",
@@ -1587,7 +1598,11 @@
 							"};",
 							"",
 							"// sign the JWT token",
-							"var sJWT = KJUR.jws.JWS.sign(null, headerStr, payload, privateKey);",
+							"try {",
+							"  var sJWT = KJUR.jws.JWS.sign(null, headerStr, payload, privateKey);",
+							"} catch (e) {",
+							"  throw new Error('Error signing the JWT token: ' + e.message);",
+							"}",
 							"",
 							"// Save the assertion as a local variable.  This assertion",
 							"// will be inserted into the request payload to retrieve an access_token",
@@ -1600,7 +1615,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "62b601f1-ed8d-431f-8419-1a634d7115c4",
+						"id": "36404b96-921f-4651-bbef-7aa0485b0bd8",
 						"exec": [
 							"// Retrieve the access token from the response and save as an environment variable",
 							"var jsonData = pm.response.json();",
@@ -1708,7 +1723,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "67bb45d7-dc62-4ec5-b01b-d82a1bd149de",
+				"id": "5edb6426-0570-42b3-b6ce-da67671974ca",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -1718,7 +1733,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "319752aa-bcb9-4238-b9b5-b267ddc8458a",
+				"id": "97b62a20-3833-492e-af2c-306f29c6bf73",
 				"type": "text/javascript",
 				"exec": [
 					""
